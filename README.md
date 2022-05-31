@@ -7,3 +7,7 @@ If the user correctly guesses the word before the hanged person is fully drawn, 
 
 # Goal of Project
 This project is for me to practice Java and creating a game on my own. It is also a way for me to practice making regular commits as I proceed with the creation of this project. 
+
+# Project source
+This challenge/game is from the Complete Java Development Bootcamp on Udemy https://www.udemy.com/course/the-complete-java-development-bootcamp/
+The course provided the hangman drawings as well as the array of challange words. The rest of the code is mine
