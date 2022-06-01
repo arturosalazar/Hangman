@@ -76,9 +76,25 @@ public class Hangman {
         String randomWordToGuess = randomWord(words);
         char[] wordToGuessArr = randomWordToGuess.toCharArray();
 
-        for (int i = 0; i < wordToGuessArr.length; i++) {
-            System.out.println(wordToGuessArr[i]);
+        /*
+            Task 2 - Create an array for placeholder chars (which will get revealed with correct guesses)
+            Display the correct number of placeholder characters with printPlaceHolder
+        */
+        
+        char[] placeHolderArr = new char[wordToGuessArr.length];
+        for (int i = 0; i < placeHolderArr.length; i++) {
+            placeHolderArr[i] = '_';
         }
+
+        //Temporary print statement for debugging
+        System.out.print("Word: ");
+        for (int i = 0; i < wordToGuessArr.length; i++){
+            System.out.print(wordToGuessArr[i] + " ");
+        }
+        System.out.println();
+        //End Temporary print statement for debugging
+
+        printPlaceHolder(placeHolderArr);
 
     }
 
@@ -88,6 +104,14 @@ public class Hangman {
         String randomWord = words[randomChoice];
 
         return randomWord;
+    }
+
+    public static void printPlaceHolder(char[] placeHolderArr) {
+        System.out.print("Word: ");
+        for (int i = 0; i < placeHolderArr.length; i++){
+            System.out.print(placeHolderArr[i] + " ");
+        }
+        System.out.println("\n");
     }
 
 }
