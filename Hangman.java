@@ -67,12 +67,27 @@ public class Hangman {
     " =========\n"};
 
     public static void main(String[] args) {
+        
+        /*
+            Task 1 - Pick a random word from the array of possible guesses
+        */
+        
+        //Turn the word-to-guess into an array that we can iterate over
+        String randomWordToGuess = randomWord(words);
+        char[] wordToGuessArr = randomWordToGuess.toCharArray();
 
+        for (int i = 0; i < wordToGuessArr.length; i++) {
+            System.out.println(wordToGuessArr[i]);
+        }
 
+    }
 
+    public static String randomWord(String[] words) {
+        //Guess a random number from 0 to the length of the array. Use to select word
+        int randomChoice = (int) (Math.random() * words.length);
+        String randomWord = words[randomChoice];
 
-
-
+        return randomWord;
     }
 
 }
