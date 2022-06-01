@@ -86,6 +86,17 @@ public class Hangman {
             placeHolderArr[i] = '_';
         }
 
+        /*
+            Task 3 - Create a counter variable for the user's wrong guesses and use that to display the correct gallows
+            before the word to Guess
+        */
+
+        int missCounter = 0;
+        //use array of size 6, because that is the max number of misses user can get
+        char[] missArray = new char[6];
+
+        printGallows(missCounter);
+
         //Temporary print statement for debugging
         System.out.print("Word: ");
         for (int i = 0; i < wordToGuessArr.length; i++){
@@ -95,6 +106,7 @@ public class Hangman {
         //End Temporary print statement for debugging
 
         printPlaceHolder(placeHolderArr);
+
 
     }
 
@@ -112,6 +124,10 @@ public class Hangman {
             System.out.print(placeHolderArr[i] + " ");
         }
         System.out.println("\n");
+    }
+
+    public static void printGallows(int missCounter) {
+        System.out.println(gallows[missCounter]);
     }
 
 }
