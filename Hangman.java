@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Hangman {
 
     public static String[] words = {"ant", "baboon", "badger", "bat", "bear", "beaver", "camel",
@@ -67,6 +69,8 @@ public class Hangman {
     " =========\n"};
 
     public static void main(String[] args) {
+
+        Scanner scan = new Scanner (System.in);
         
         /*
             Task 1 - Pick a random word from the array of possible guesses
@@ -107,13 +111,24 @@ public class Hangman {
             Task 4 - Show any missed guesses
             */
             printMisses(missArray);
+
+            //Task 4.1 - ask for a guesss
+            //Take in user's guess as a whole string, then simply use the first character as the guess
+            System.out.print("Guess: ");
+            String userGuess = scan.next();
+            char userCharGuess = userGuess.charAt(0);
+            //Make sure the character we compare to our words is always lower case
+            userCharGuess = Character.toLowerCase(userCharGuess); 
+
+            //Temp testing print statement
+            System.out.println(userCharGuess);
             
             //TODO: remove after adding logic for individual turns
             continueGame = false;
         }
 
         
-
+        scan.close();
 
     }
 
@@ -154,6 +169,7 @@ public class Hangman {
         System.out.println();
     }
     //End Temporary print function for debugging
+
 
 }
 
