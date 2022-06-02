@@ -120,7 +120,7 @@ public class Hangman {
             //Make sure the character we compare to our words is always lower case
             userCharGuess = Character.toLowerCase(userCharGuess); 
 
-            //Task 4.3 - Add logic to check if a letter is in the selectedWord or not 
+            //Task 4.2 - Add logic to check if a letter is in the selectedWord or not 
             boolean guessCharInWord = false;
             for (int i = 0; i < wordToGuessArr.length; i++){
                 //if we have a hit: 
@@ -129,7 +129,6 @@ public class Hangman {
                     guessCharInWord = true;
                 }
             }
-
             if (guessCharInWord == false){
                 missArray[missCounter] = userCharGuess;
                 missCounter++;
