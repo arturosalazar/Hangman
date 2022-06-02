@@ -102,6 +102,13 @@ public class Hangman {
             printGallows(missCounter);
             printWordToGuessArr(wordToGuessArr);
             printPlaceHolder(placeHolderArr);
+            
+            /*
+            Task 4 - Show any missed guesses
+            */
+            printMisses(missArray);
+            
+            //TODO: remove after adding logic for individual turns
             continueGame = false;
         }
 
@@ -128,6 +135,14 @@ public class Hangman {
 
     public static void printGallows(int missCounter) {
         System.out.println(gallows[missCounter]);
+    }
+
+    public static void printMisses(char[] missArray) {
+        System.out.print("Misses: ");
+        for (int i = 0; i < missArray.length; i++) {
+            System.out.print(missArray[i]);
+        }
+        System.out.println("\n");
     }
 
     //Temporary print function for debugging
