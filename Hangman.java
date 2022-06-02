@@ -105,9 +105,8 @@ public class Hangman {
         while (continueGame) {
             //At the top of every turn, print everything for the user
             printGallows(missCounter);
-            printWordToGuessArr(wordToGuessArr);
             printPlaceHolder(placeHolderArr);
-            
+   
             /*
             Task 4 - Show any missed guesses
             */
@@ -151,19 +150,14 @@ public class Hangman {
                     System.out.println("GOOD WORK!");
                 }
             }
-
-        }
-
-        
+        }   
         scan.close();
-
     }
 
     public static String randomWord(String[] words) {
         //Guess a random number from 0 to the length of the array. Use to select word
         int randomChoice = (int) (Math.random() * words.length);
         String randomWord = words[randomChoice];
-
         return randomWord;
     }
 
@@ -197,17 +191,6 @@ public class Hangman {
             return true;
         }
     }
-
-    //Temporary print function for debugging
-    public static void printWordToGuessArr(char[] wordToGuessArr) {
-        System.out.print("Word: ");
-        for (int i = 0; i < wordToGuessArr.length; i++){
-            System.out.print(wordToGuessArr[i] + " ");
-        }
-        System.out.println();
-    }
-    //End Temporary print function for debugging
-
 
 }
 
