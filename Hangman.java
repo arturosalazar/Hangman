@@ -135,8 +135,22 @@ public class Hangman {
                 missCounter++;
             }
 
-            //Update whether we have met an end game condition (too many misses or correctly guessed word)
+            /*
+            Task 5 - Update whether we have met an end game condition (too many misses or correctly guessed word)
+            */
             continueGame = checkGameContinue(missCounter, placeHolderArr, wordToGuessArr);
+
+            //Task 5.1 - Check win condition, print final output of the gallows/placeholderArr and print whether or not the user has won
+            if (continueGame  == false){
+                printGallows(missCounter);
+                printPlaceHolder(placeHolderArr);
+                if (missCounter == 6){
+                    System.out.println("RIP!");
+                    System.out.println("The correct word was: " + randomWordToGuess);
+                } else {
+                    System.out.println("GOOD WORK!");
+                }
+            }
 
         }
 
