@@ -97,14 +97,7 @@ public class Hangman {
 
         printGallows(missCounter);
 
-        //Temporary print statement for debugging
-        System.out.print("Word: ");
-        for (int i = 0; i < wordToGuessArr.length; i++){
-            System.out.print(wordToGuessArr[i] + " ");
-        }
-        System.out.println();
-        //End Temporary print statement for debugging
-
+        printWordToGuessArr(wordToGuessArr);
         printPlaceHolder(placeHolderArr);
 
 
@@ -129,6 +122,18 @@ public class Hangman {
     public static void printGallows(int missCounter) {
         System.out.println(gallows[missCounter]);
     }
+
+    //Temporary print function for debugging
+    public static void printWordToGuessArr(char[] wordToGuessArr) {
+        
+        System.out.print("Word: ");
+        for (int i = 0; i < wordToGuessArr.length; i++){
+            System.out.print(wordToGuessArr[i] + " ");
+        }
+        System.out.println();
+        
+    }
+    //End Temporary print function for debugging
 
 }
 
