@@ -120,11 +120,22 @@ public class Hangman {
             //Make sure the character we compare to our words is always lower case
             userCharGuess = Character.toLowerCase(userCharGuess); 
 
-            //Temp testing print statement
-            System.out.println(userCharGuess);
+            //Task 4.3 - Add logic to check if a letter is in the selectedWord or not 
+            boolean guessCharInWord = false;
+            for (int i = 0; i < wordToGuessArr.length; i++){
+                //if we have a hit: 
+                if (wordToGuessArr[i] == userCharGuess){
+                    placeHolderArr[i] = userCharGuess;
+                    guessCharInWord = true;
+                }
+            }
+
+            if (guessCharInWord == false){
+                missArray[missCounter] = userCharGuess;
+                missCounter++;
+            }
+
             
-            //TODO: remove after adding logic for individual turns
-            continueGame = false;
         }
 
         
