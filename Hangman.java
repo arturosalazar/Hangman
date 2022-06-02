@@ -95,10 +95,17 @@ public class Hangman {
         //use array of size 6, because that is the max number of misses user can get
         char[] missArray = new char[6];
 
-        printGallows(missCounter);
+        boolean continueGame = true;
 
-        printWordToGuessArr(wordToGuessArr);
-        printPlaceHolder(placeHolderArr);
+        while (continueGame) {
+            //At the top of every turn, print everything for the user
+            printGallows(missCounter);
+            printWordToGuessArr(wordToGuessArr);
+            printPlaceHolder(placeHolderArr);
+            continueGame = false;
+        }
+
+        
 
 
     }
@@ -125,13 +132,11 @@ public class Hangman {
 
     //Temporary print function for debugging
     public static void printWordToGuessArr(char[] wordToGuessArr) {
-        
         System.out.print("Word: ");
         for (int i = 0; i < wordToGuessArr.length; i++){
             System.out.print(wordToGuessArr[i] + " ");
         }
         System.out.println();
-        
     }
     //End Temporary print function for debugging
 
