@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Hangman {
 
@@ -134,7 +135,9 @@ public class Hangman {
                 missCounter++;
             }
 
-            
+            //Update whether we have met an end game condition (too many misses or correctly guessed word)
+            continueGame = checkGameContinue(missCounter, placeHolderArr, wordToGuessArr);
+
         }
 
         
@@ -168,6 +171,17 @@ public class Hangman {
             System.out.print(missArray[i]);
         }
         System.out.println("\n");
+    }
+
+    //Function will return false if an end game condition is met (too many guesses or guessed the correct word)
+    public static boolean checkGameContinue(int missCounter, char[] placeHolderArr, char [] wordToGuessArr) {
+        if (missCounter == 6){
+            return false;
+        } else if (Arrays.equals(placeHolderArr, wordToGuessArr)){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //Temporary print function for debugging
